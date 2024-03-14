@@ -19,7 +19,7 @@ public class Main {
                 }
             }
             reader.close();
-//            Collections.shuffle(packages);
+            Collections.shuffle(packages);
         }
         catch(IOException e) {
             System.err.println("Error reading file: " + e.getMessage());

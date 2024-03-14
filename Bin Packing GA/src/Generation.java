@@ -5,20 +5,19 @@ public class Generation {
     ArrayList<Chromosome> population = new ArrayList<Chromosome>();
 
 
-    public Generation(ArrayList<Integer> allPackages) {
+    public Generation(ArrayList<Integer> allPackages) { // Sorts packages into bins using Best Fit algorithm
         ArrayList<Bin> bins = new ArrayList<Bin>();
-//        bins.add(new Bin());
         int count = 0;
         for (Integer p: allPackages) {
 
             // The following loop finds the index of the bin with the tightest spot for package p to fit
             int minFreeSpaceIndex = -1;
-            int maxFreeSpaceSoFar = 10; // 10 = bin capacity, which is the maximum amount of free space possible
+            int minFreeSpaceSoFar = 10; // 10 = bin capacity, which is the maximum amount of free space possible
             for (int i = 0; i < bins.size(); i++) {
                 int binFreeSpace = bins.get(i).getFreeSpace();
-                if (binFreeSpace > p && binFreeSpace < maxFreeSpaceSoFar) { // if we found the tightest spot for package to fit
+                if (binFreeSpace >= p && binFreeSpace < minFreeSpaceSoFar) { // if we found the tightest spot for package to fit
                     minFreeSpaceIndex = i;
-                    maxFreeSpaceSoFar = binFreeSpace;
+                    minFreeSpaceSoFar = binFreeSpace;
                 }
             }
             if (minFreeSpaceIndex == -1) {
@@ -31,10 +30,13 @@ public class Generation {
             }
 
         }
+
         System.out.println("Solved using " + count + " bins");
         for(Bin b : bins) {
             System.out.println("NEW BIN: \n" + b);
         }
+
+
     }
 //    public Generation(ArrayList<Integer> allPackages) { //performs first fit algorithm from given weights to get a starting chromosome
 //        boolean allPacked = false; // becomes true when all packages are put into bins

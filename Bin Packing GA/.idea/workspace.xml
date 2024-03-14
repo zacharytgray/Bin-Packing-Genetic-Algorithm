@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a82c6c6-f926-4d7a-bf50-a25985797c4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Datasets/12BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Chromosome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Package.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datasets/12BinProblem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Datasets/12BinProblem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Generation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bin Packing GA/Generation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bin Packing GA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,5 +58,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Generation.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

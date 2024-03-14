@@ -23,8 +23,8 @@ public class Chromosome {
 
 
 
-    public ArrayList<Package> getPackages() {
-        ArrayList<Package> packages = new ArrayList<Package>();
+    public ArrayList<Integer> getPackages() {
+        ArrayList<Integer> packages = new ArrayList<Integer>();
         for (Bin b:
              bins) {
             packages.addAll(b.packages);

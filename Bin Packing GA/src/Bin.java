@@ -3,13 +3,13 @@ import java.util.ArrayList;
 public class Bin {
     final int CAPACITY = 10;
     public int totalWeight = 0;
-    ArrayList<Package> packages = new ArrayList<Package>();
+    ArrayList<Integer> packages = new ArrayList<Integer>();
 
     public Bin() {
 
     }
 
-    public Bin(ArrayList<Package> packages) {
+    public Bin(ArrayList<Integer> packages) {
         this.packages = packages;
         updateTotalWeight();
     }
@@ -21,24 +21,24 @@ public class Bin {
 
     public void updateTotalWeight() {
         totalWeight = 0;
-        for (Package p: packages) {
-            totalWeight += p.weight;
+        for (int p: packages) {
+            totalWeight += p;
         }
     }
 
-    public void addPackage(Package p) {
+    public void addPackage(Integer p) {
         packages.add(p);
         updateTotalWeight();
     }
 
-    public void addPackage(ArrayList<Package> packages) {
+    public void addPackage(ArrayList<Integer> packages) {
         this.packages.addAll(packages);
         updateTotalWeight();
     }
 
     public String toString() {
         String listPackages = "";
-        for(Package p : packages) {
+        for(Integer p : packages) {
             listPackages += (p + "\n");
         }
         return listPackages;

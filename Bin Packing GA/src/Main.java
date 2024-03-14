@@ -10,7 +10,7 @@ public class Main {
         ArrayList<Integer> packages = new ArrayList<Integer>();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("Datasets/12BinProblem.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("Datasets/68BinProblem.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] vals = line.split(",");

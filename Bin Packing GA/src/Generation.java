@@ -16,6 +16,8 @@ public class Generation {
             for (int i = 0; i < bins.size(); i++) {
                 int binFreeSpace = bins.get(i).getFreeSpace();
                 if (binFreeSpace >= p && binFreeSpace < minFreeSpaceSoFar) { // if we found the tightest spot for package to fit
+                    // In the second half of that condition, we ensure the lower numbered bin would win in the event
+                    // of a tie because of the < sign, rather than <=.
                     minFreeSpaceIndex = i;
                     minFreeSpaceSoFar = binFreeSpace;
                 }
@@ -23,18 +25,19 @@ public class Generation {
             if (minFreeSpaceIndex == -1) {
                 bins.add(new Bin());
                 count++;
-                bins.get(bins.size() - 1).addPackage(new Package(p)); //add new bin, put package in that bin
+                bins.get(bins.size() - 1).addPackage(p); //add new bin, put package in that bin
             }
             else {
-                bins.get(minFreeSpaceIndex).addPackage(new Package(p)); // add package p at that index
+                bins.get(minFreeSpaceIndex).addPackage(p); // add package p at that index
             }
 
         }
 
-        System.out.println("Solved using " + count + " bins");
         for(Bin b : bins) {
             System.out.println("NEW BIN: \n" + b);
         }
+        System.out.println("Solved using " + count + " bins");
+
 
 
     }
@@ -89,19 +92,19 @@ public class Generation {
 
 
     public void bestFit(Chromosome c) {
-        ArrayList<Package> packages = c.getPackages();
+        ArrayList<Integer> packages = c.getPackages();
         ArrayList<Bin> bins = new ArrayList<Bin>();
         bins.add(new Bin());
 
 
-        for (Package p: packages) {
+        for (Integer p: packages) {
 
             // The following loop finds the index of the bin with the tightest spot for package p to fit
             int minFreeSpaceIndex = -1;
             int maxFreeSpaceSoFar = 10; // 10 = bin capacity, which is the maximum amount of free space possible
             for (int i = 0; i < bins.size(); i++) {
                 int binFreeSpace = bins.get(i).getFreeSpace();
-                if (binFreeSpace > p.weight && binFreeSpace < maxFreeSpaceSoFar) { // if we found the tightest spot for package to fit
+                if (binFreeSpace > p && binFreeSpace < maxFreeSpaceSoFar) { // if we found the tightest spot for package to fit
                     minFreeSpaceIndex = i;
                     maxFreeSpaceSoFar = binFreeSpace;
                 }

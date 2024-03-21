@@ -1,7 +1,9 @@
+package Main;
+
 import java.util.ArrayList;
 
 public class Bin {
-    final int CAPACITY = 10;
+    final int CAPACITY = 20;
     public int totalWeight = 0;
     ArrayList<Integer> packages = new ArrayList<Integer>();
 
@@ -39,8 +41,9 @@ public class Bin {
     public String toString() {
         String listPackages = "";
         for(Integer p : packages) {
-            listPackages += (p + "\n");
+            listPackages += (p + ", ");
         }
-        return listPackages;
+        int len = listPackages.length();
+        return listPackages.substring(0, len-2);
     }
 }

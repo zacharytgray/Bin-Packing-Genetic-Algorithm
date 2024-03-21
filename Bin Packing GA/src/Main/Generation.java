@@ -21,10 +21,10 @@ public class Generation {
         initializePopulation(); // Creates population pool from data set
         doTournament(); // parent pool created via tournament selection
         doSinglePoint();
-        for(Chromosome c: childPool) {
-            System.out.println(c.fitness);
-        }
-//        System.out.println(childPool.size());
+
+//        for(Chromosome c: childPool) {
+//            System.out.println(c.fitness);
+//        }
     }
 
     public void initializePopulation() {
@@ -92,7 +92,8 @@ public class Generation {
 
     public void doSinglePoint() {
         int randomIndex;
-        for (int i = 0; i < POPULATIONSIZE; i++) {
+        // randomly select
+        while (childPool.size() < POPULATIONSIZE) {
             randomIndex = new Random().nextInt(POPULATIONSIZE);
             Chromosome p1 = parentPool.get(randomIndex);
             randomIndex = new Random().nextInt(POPULATIONSIZE);
@@ -102,7 +103,6 @@ public class Generation {
             sp.doSinglePoint();
             childPool.add(sp.c1);
             childPool.add(sp.c2);
-
         }
 
 

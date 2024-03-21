@@ -5,45 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a82c6c6-f926-4d7a-bf50-a25985797c4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/Capacity20DataSets/2048BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/Capacity20DataSets/256BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/Capacity20DataSets/4096BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/Capacity20DataSets/64BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/MyDataSets/1024BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/MyDataSets/256BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/MyDataSets/5120BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/MyDataSets/512BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/MyDataSets/64BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/116BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/12BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/22BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/232BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/464BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/68BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/OriginalDataSets/928BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/WainwrightDataSets/1000BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/WainwrightDataSets/100BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/WainwrightDataSets/5000BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets/WainwrightDataSets/500BinProblem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CrossoverTechniques/Order1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CrossoverTechniques/Order2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CrossoverTechniques/SinglePoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Chromosome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/RandomBooleanGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Tournament.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datasets/12BinProblem.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datasets/22BinProblem.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datasets/68BinProblem.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Bin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Chromosome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Generation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Bin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chromosome.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Generation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/CrossoverTechniques/SinglePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bin Packing GA/CrossoverTechniques/SinglePoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/Main/Generation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bin Packing GA/Main/Generation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrossoverTechniques/SinglePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrossoverTechniques/SinglePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Generation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Generation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -3,6 +3,8 @@ package CrossoverTechniques;
 import Main.Chromosome;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class SinglePoint {
@@ -24,60 +26,91 @@ public class SinglePoint {
             c2.getPackages().add(0);
         }
 
-//        doSinglePoint();
+        doSinglePoint();
 
-//        System.out.println("C1: " + c1);
-//        System.out.println("C2: " + c2);
+        System.out.println("C1: " + c1);
+        System.out.println("C2: " + c2);
     }
 
     public void doSinglePoint() {
         int slicePoint = new Random().nextInt(NUMPACKAGES);
 //        System.out.println(slicePoint);
 
-        for (int i = 0; i < slicePoint; i++) {
+
+        for (int i = 0; i < slicePoint; i++) {  // put first half of p1 in c1
             c1.getPackages().set(i, p1.getPackages().get(i));
         }
-        for (int i = 0; i < slicePoint; i++) {
+        for (int i = 0; i < slicePoint; i++) { // put first half of p2 in c2
             c2.getPackages().set(i, p2.getPackages().get(i));
         }
 
-        for (int i = slicePoint; i < NUMPACKAGES; i++) {
+
+        for (int i = slicePoint; i < NUMPACKAGES; i++) { // put second half of p2 in c1
             int parentPackage = p2.getPackages().get(i);
             c1.getPackages().set(i, parentPackage);
         }
-        for (int i = slicePoint; i < NUMPACKAGES; i++) {
+        for (int i = slicePoint; i < NUMPACKAGES; i++) { // put second half of p1 in c2
             c2.getPackages().set(i, p1.getPackages().get(i));
         }
+
+        //now, we check for infeasibles
+
+        Map<Integer, Integer> p1weightMap = createWeightMap(p1); // map of weight, count pairs that count how many of a package weight are in a chromosome
+        Map<Integer, Integer> p2weightMap = createWeightMap(p2);
+        Map<Integer, Integer> c1weightMap = createWeightMap(c1); // creates children weight maps to be compared to their respective parent weigth maps
+        Map<Integer, Integer> c2weightMap = createWeightMap(c2);
+//
+//        System.out.println("p1 weight map: " + p1weightMap);
+//        System.out.println("p2 weight map: " + p2weightMap);
+//        System.out.println("c1 weight map: " + c1weightMap);
+//        System.out.println("c2 weight map: " + c2weightMap);
+
+    }
+
+    public Map<Integer, Integer> createWeightMap(Chromosome c) {
+        Map<Integer, Integer> weightMap = new HashMap<>();
+        int count;
+        for (int i = 0; i < c.getLength(); i++) {
+            if (!weightMap.containsKey(c.getPackages().get(i))) {
+                //if weight does not exist already, set count to 1.
+                count = 1 ;
+            } else {
+                count = weightMap.get(c.getPackages().get(i)) + 1;
+            }
+            weightMap.put(c.getPackages().get(i), count);
+        }
+        return weightMap;
     }
 
     public static void main (String[] args) {
         ArrayList<Integer> p1Packages = new ArrayList<>();
         ArrayList<Integer> p2Packages = new ArrayList<>();
 
+        p1Packages.add(1); //five 1s, four 2s
         p1Packages.add(1);
         p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
+        p1Packages.add(2);
+        p1Packages.add(2);
+        p1Packages.add(2);
+        p1Packages.add(3);
+        p1Packages.add(3);
+        p1Packages.add(3);
+
+        p2Packages.add(3); // five 1s, four 2s
+        p2Packages.add(3);
+        p2Packages.add(3);
         p2Packages.add(2);
         p2Packages.add(2);
         p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
+        p2Packages.add(1);
+        p2Packages.add(1);
+        p2Packages.add(1);
 
         Chromosome p1 = new Chromosome(p1Packages);
         Chromosome p2 = new Chromosome(p2Packages);
 
-//        System.out.println("P1: " + p1);
-//        System.out.println("P2: " + p2);
+        System.out.println("P1: " + p1);
+        System.out.println("P2: " + p2);
 
         SinglePoint sp = new SinglePoint(p1, p2);
 

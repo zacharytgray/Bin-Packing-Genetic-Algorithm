@@ -31,7 +31,6 @@ public class Generation {
         for (int i = 0; i < POPULATIONSIZE; i++) {
             ArrayList<Integer> shuffledPackages = new ArrayList<>(packages);
             Collections.shuffle(shuffledPackages);
-
             Chromosome c = new Chromosome(shuffledPackages);
             ArrayList<Bin> bins = bestFit(shuffledPackages);
             c.setFitness(bins.size()); // set fitness to number of bins after best fit
@@ -84,7 +83,6 @@ public class Generation {
             Chromosome c1 = population.get(randomIndex);
             randomIndex = new Random().nextInt(POPULATIONSIZE);
             Chromosome c2 = population.get(randomIndex);
-
             Chromosome winner = t.doTournament(c1, c2);
             parentPool.add(winner);
         }

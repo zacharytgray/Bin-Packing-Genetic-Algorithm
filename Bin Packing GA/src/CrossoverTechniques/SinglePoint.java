@@ -14,7 +14,7 @@ public class SinglePoint {
     public Chromosome c1 = new Chromosome();
     public Chromosome c2 = new Chromosome();
 
-    public final int NUMPACKAGES;
+    public int NUMPACKAGES;
 
     public SinglePoint(Chromosome p1, Chromosome p2) {
         this.NUMPACKAGES = p1.getLength();
@@ -26,10 +26,10 @@ public class SinglePoint {
             c2.getPackages().add(0);
         }
 
-        doSinglePoint();
+//        doSinglePoint();
 
-        System.out.println("C1: " + c1);
-        System.out.println("C2: " + c2);
+//        System.out.println("C1: " + c1);
+//        System.out.println("C2: " + c2);
     }
 
     public void doSinglePoint() {

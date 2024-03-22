@@ -11,7 +11,7 @@ public class Main {
         ArrayList<Integer> packages = new ArrayList<Integer>();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("Datasets/WainwrightDataSets/100BinProblem.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("Bin Packing GA/Datasets/WainwrightDataSets/100BinProblem.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] vals = line.split(",");
@@ -25,7 +25,6 @@ public class Main {
         catch(IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
-
         Generation g = new Generation(packages);
 
     }

@@ -53,17 +53,46 @@ public class SinglePoint {
             c2.getPackages().set(i, p1.getPackages().get(i));
         }
 
-        //now, we check for infeasibles
+        // now, we check for infeasibles
 
         Map<Integer, Integer> p1weightMap = createWeightMap(p1); // map of weight, count pairs that count how many of a package weight are in a chromosome
         Map<Integer, Integer> p2weightMap = createWeightMap(p2);
-        Map<Integer, Integer> c1weightMap = createWeightMap(c1); // creates children weight maps to be compared to their respective parent weigth maps
+        Map<Integer, Integer> c1weightMap = createWeightMap(c1);
         Map<Integer, Integer> c2weightMap = createWeightMap(c2);
-//
-//        System.out.println("p1 weight map: " + p1weightMap);
+
+        Map<Integer, Integer> offsetMap1 = getOffsetMap(p1weightMap, c1weightMap);
+        Map<Integer, Integer> offsetMap2 = getOffsetMap(p2weightMap, c2weightMap);
+
+
+        System.out.println("p1 weight map: " + p1weightMap);
 //        System.out.println("p2 weight map: " + p2weightMap);
-//        System.out.println("c1 weight map: " + c1weightMap);
+        System.out.println("c1 weight map: " + c1weightMap);
 //        System.out.println("c2 weight map: " + c2weightMap);
+
+        System.out.println("offset map 1: " + offsetMap1);
+        System.out.println("offset map 2: " + offsetMap2);
+
+
+    }
+
+    public Map<Integer, Integer> getOffsetMap(Map<Integer, Integer> parentMap, Map<Integer, Integer> childMap) {
+        // Iterate through each child, subtract weights from parent weight maps as you go
+        // Once we're done, we'll have a map of how many number of each weight we are "away" for each weight.
+
+        Map<Integer, Integer> offsetMap = new HashMap<>(); //"offset" map between parent and child
+
+        // offset map is essentially the parent map minus child map
+        for (Integer weight : parentMap.keySet()) {
+            if (childMap.containsKey(weight)) { // if the child map contains the weight in question, subtract p-c and add to offset map
+                int difference = parentMap.get(weight) - childMap.get(weight);
+                offsetMap.put(weight, difference);
+            }
+            else { // if child map does not contain the weight in question, add all n weights of this weight from parent map to the offset map
+                offsetMap.put(weight, parentMap.get(weight));
+            }
+        }
+
+        return offsetMap;
 
     }
 
@@ -73,7 +102,7 @@ public class SinglePoint {
         for (int i = 0; i < c.getLength(); i++) {
             if (!weightMap.containsKey(c.getPackages().get(i))) {
                 //if weight does not exist already, set count to 1.
-                count = 1 ;
+                count = 1;
             } else {
                 count = weightMap.get(c.getPackages().get(i)) + 1;
             }

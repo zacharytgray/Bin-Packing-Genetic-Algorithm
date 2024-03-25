@@ -7,7 +7,7 @@
     <list default="true" id="4a82c6c6-f926-4d7a-bf50-a25985797c4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Bin Packing GA/CrossoverTechniques/SinglePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bin Packing GA/CrossoverTechniques/SinglePoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrossoverTechniques/SinglePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrossoverTechniques/SinglePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrossoverTechniques/Order2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrossoverTechniques/Order2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

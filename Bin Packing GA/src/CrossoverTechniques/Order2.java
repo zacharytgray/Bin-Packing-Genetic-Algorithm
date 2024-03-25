@@ -31,7 +31,7 @@ public class Order2 {
         System.out.println("C2: " + c2);
     }
 
-    public void doOrder2() {
+    public void doOrder2() { // PROBLEM: We can have repeat weights in a specific chromosome. Basically, each chromosome is not a set like they are in the example problems on harvey.
 
         numSpecialPositions = (int) Math.round(specialPositionsPercentage * POPULATIONSIZE);
         int specialIndex;
@@ -76,22 +76,22 @@ public class Order2 {
 
         p1Packages.add(1);
         p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
-        p1Packages.add(1);
+        p1Packages.add(2);
+        p1Packages.add(2);
+        p1Packages.add(3);
+        p1Packages.add(3);
+        p1Packages.add(4);
+        p1Packages.add(4);
+        p1Packages.add(5);
+        p2Packages.add(5);
+        p2Packages.add(4);
+        p2Packages.add(4);
+        p2Packages.add(3);
+        p2Packages.add(3);
         p2Packages.add(2);
         p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
-        p2Packages.add(2);
+        p2Packages.add(1);
+        p2Packages.add(1);
 
         Chromosome p1 = new Chromosome(p1Packages);
         Chromosome p2 = new Chromosome(p2Packages);
